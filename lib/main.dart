@@ -208,7 +208,7 @@ class _HabitDetailPageState extends State<HabitDetailPage>{
                             Text(
                               value.toString(),
                               style: TextStyle(
-                                fontSize: 12,
+                                fontSize: 13,
                                 color: isSelected ? Colors.white70 : Colors.black54,
                               )
                             ),
