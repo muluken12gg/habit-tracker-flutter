@@ -159,7 +159,7 @@ class _HabitDetailPageState extends State<HabitDetailPage>{
                     return Container(
                       decoration: BoxDecoration(
                         color: Colors.grey.shade100,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(11),
                       ),
                     );
                   }
