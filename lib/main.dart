@@ -21,10 +21,10 @@ class MyApp extends StatelessWidget{
 
 class HabitListPage extends StatelessWidget{
   final List<String> habits = [
-    "reading",
-    "pushup",
-    "meditation",
-    "morning routine"
+    "Reading",
+    "Pushup",
+    "Meditation",
+    "Morning routine"
   ];
 
   @override
@@ -85,7 +85,7 @@ class _HabitDetailPageState extends State<HabitDetailPage>{
         Map<String, dynamic> decoded = jsonDecode(data);
         setState(() {
           dailyValues = decoded.map(
-            (key, value) => MapEntry(int.parse(key), value),
+            (key, value) => MapEntry(int.parse(key), (value as num).toInt()),
           );
         });
       }
@@ -95,6 +95,7 @@ class _HabitDetailPageState extends State<HabitDetailPage>{
       final prefs = await SharedPreferences.getInstance();
       String encoded = jsonEncode(dailyValues);
       await prefs.setString(widget.habitName, encoded);
+      print("Saved to storage: $encoded");
     }
 
     @override
@@ -252,10 +253,12 @@ class _HabitDetailPageState extends State<HabitDetailPage>{
                         dailyValues[selectedDay] = value;
                       });
                       await saveData();
+                      print("Saved: $dailyValues");
+
                       controller.clear();
                     }
                   },
-                  child: Text("Save"),
+                  child: Text("Save."),
                 )
               ],
             )
