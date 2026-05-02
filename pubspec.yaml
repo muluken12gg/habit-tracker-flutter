@@ -1,5 +1,5 @@
-name: flutter_application_1
-description: "A new Flutter project."
+name: habit_tracker
+description: "A simple and effective habit tracking app with calendar view."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -28,9 +28,13 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  shared_preferences: ^2.2.2
+  
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  table_calendar: ^3.0.9
   flutter:
     sdk: flutter
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -75,9 +79,9 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
-  #   - family: Schyler
+  #   - family: IndieFlower
   #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: Fonts/IndieFlowerFlower-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
