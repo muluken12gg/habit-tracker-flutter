@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
       final habits = await _habitService.getAllHabits();
       setState(() => _habits = habits);
     } catch (e) {
-      print('Error loading habits: $e');
+      debugPrint('Error loading habits: $e');
     } finally {
       setState(() => _isLoading = false);
     }
@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
         _habits.add(habit);
       });
     } catch (e) {
-      print('Error adding habit: $e');
+      debugPrint('Error adding habit: $e');
     }
   }
 
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
         _habits.removeWhere((habit) => habit.id == id);
       });
     } catch (e) {
-      print('Error deleting habit: $e');
+      debugPrint('Error deleting habit: $e');
     }
   }
 
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
         });
       }
     } catch (e) {
-      print('Error editing habit: $e');
+      debugPrint('Error editing habit: $e');
     }
   }
 

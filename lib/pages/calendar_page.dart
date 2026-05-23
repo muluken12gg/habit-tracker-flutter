@@ -35,7 +35,7 @@ class _CalendarPageState extends State<CalendarPage> {
       );
       setState(() => _progressData = progress);
     } catch (e) {
-      print('Error loading progress: $e');
+      debugPrint('Error loading progress: $e');
     } finally {
       setState(() => _isLoading = false);
     }
@@ -51,7 +51,7 @@ class _CalendarPageState extends State<CalendarPage> {
       }
       await _loadProgress();
     } catch (e) {
-      print('Error updating entry: $e');
+      debugPrint('Error updating entry: $e');
     }
   }
 
