@@ -82,7 +82,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 ),
                 child: FractionallySizedBox(
                   alignment: Alignment.centerLeft,
-                  widthFactor: value / 10.0,
+                  widthFactor: (value / 10.0).clamp(0.0, 1.0),
                   child: Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
@@ -253,7 +253,6 @@ class _CalendarPageState extends State<CalendarPage> {
                       onDaySelected: (selectedDay, focusedDay) {
                         setState(() {
                           _selectedDay = selectedDay;
-                          _focusedDay = focusedDay;
                         });
                         _showEntryDialog(selectedDay);
                       },
